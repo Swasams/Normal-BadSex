@@ -259,7 +259,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 13400b253c32f004295e69b1bb54e2a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1051,7 +1051,7 @@ Transform:
   - {fileID: 846211355596383689}
   - {fileID: 846211356705355340}
   - {fileID: 714071151291962156}
-  - {fileID: 940692379667872930}
+  - {fileID: 619332833765984726}
   - {fileID: 3000623279561911184}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -4168,6 +4168,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 846211356142595827}
     m_Modifications:
+    - target: {fileID: 3565884566586868149, guid: 46bc9ed75b79cc0439c5c3796ab7d5fa, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 3638117337152488116, guid: 46bc9ed75b79cc0439c5c3796ab7d5fa, type: 3}
       propertyPath: m_Name
       value: Continue
@@ -4230,9 +4234,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46bc9ed75b79cc0439c5c3796ab7d5fa, type: 3}
---- !u!4 &940692379667872930 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3813102256621614273, guid: 46bc9ed75b79cc0439c5c3796ab7d5fa, type: 3}
+--- !u!224 &619332833765984726 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3565884566586868149, guid: 46bc9ed75b79cc0439c5c3796ab7d5fa, type: 3}
   m_PrefabInstance: {fileID: 4171704279493429347}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &4243836081805538713 stripped
