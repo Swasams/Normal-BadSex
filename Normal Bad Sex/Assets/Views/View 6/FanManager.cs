@@ -14,7 +14,6 @@ public class FanManager : MonoBehaviour
     {
         bool fanUp = true;
         fanAnim = GetComponent<Animator>();
-       
     }
 
    // Update is called once per frame
@@ -25,6 +24,7 @@ public class FanManager : MonoBehaviour
             //Debug.Log("going up");
             fanAnim.Play("FanUp");
             fanUp = true;
+            //flowchart.SetBooleanVariable("fanUp", true);
         }
 
         if (fanUp == true && Input.GetKey("s") || (Input.GetKeyDown(KeyCode.DownArrow)))

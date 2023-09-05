@@ -17,6 +17,7 @@ public class ContactsScroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
             MoveItUp();
@@ -26,11 +27,12 @@ public class ContactsScroll : MonoBehaviour
         {
             MoveItDown();
         }
+        */
     }
 
     public void MoveItUp()
     {
-        //Debug.Log("Key pressed");
+        //Debug.Log("Moving It Up... allegedly");
         transform.position = new Vector3(transform.position.x,
                                         (transform.position.y - increment),
                                          transform.position.z);

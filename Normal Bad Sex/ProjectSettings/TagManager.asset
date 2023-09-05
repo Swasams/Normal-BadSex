@@ -9,6 +9,8 @@ TagManager:
   - RightMouth
   - LeftMouth
   - clothingcol
+  - UpSensor
+  - DownSensor
   layers:
   - Default
   - TransparentFX
