@@ -120,6 +120,15 @@ public class TriggerLines : NbsEvent
     }
 }
 
+public class MouseClick : NbsEvent
+{
+    public readonly Vector3 clickPosition;
+    
+    public MouseClick(Vector3 clickPosition)
+    {
+        this.clickPosition = clickPosition;
+    }
+}
 
 public class MinigameStarted : NbsEvent
 {
