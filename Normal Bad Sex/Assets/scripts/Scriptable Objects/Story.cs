@@ -7,13 +7,19 @@ public class Story : ScriptableObject
     public List<Line> lines;
 
     [System.Serializable]
-    public class MinigameEntry
+    public class CharacterEntry
     {
-        public Minigame minigame;
-        public int triggerOnLine;
+        public string characterName;
+        public List<Line> lines;
+
+        public CharacterEntry(string characterName, List<Line> lines)
+        {
+            this.characterName = characterName;
+            this.lines = lines;
+        }
     }
 
-    public MinigameEntry[] minigames;
+    public List<CharacterEntry> linesByCharacters;
 
 
     private int _currentLine;
@@ -24,23 +30,7 @@ public class Story : ScriptableObject
         return _currentLine == lines.Count - 1;
     }
 
-    public (Line, Minigame) GetNext()
-    {
-        int nextLine = _currentLine + 1;
-        Minigame minigameToReturn = null;
-        Line lineToReturn = lines[nextLine];
 
-        if (minigames.Length > 0)
-        {
-            int nextMinigame = _currentMinigame + 1;
-            minigameToReturn = minigames[nextMinigame].triggerOnLine == nextLine
-                ? minigames[nextMinigame].minigame
-                : null;
-            _currentMinigame = minigameToReturn != null ? nextMinigame : _currentMinigame;
-        }
-        _currentLine = nextLine;
-        return (lineToReturn, minigameToReturn);
-    }
 
     public void Start()
     {
@@ -53,19 +43,50 @@ public class Story : ScriptableObject
         return _currentLine;
     }
 
-    public void SetCurrentLine(int lineNumber)
+    public void SetLines(Dictionary<string, List<Line>> linesPerCharacter,List<Line> allLines )
     {
-        _currentLine = lineNumber;
-        if (minigames.Length > 0)
+        this.lines = allLines;
+        this.linesByCharacters = new List<CharacterEntry>();
+        foreach (var (character,lines) in linesPerCharacter)
         {
-            int currentMinigameTarget = 0;
-            while (minigames[currentMinigameTarget].triggerOnLine <= _currentLine)
-            {
-                currentMinigameTarget++;
-            }
-
-            _currentMinigame = currentMinigameTarget - 1;
+            linesByCharacters.Add(new CharacterEntry(character,lines));
         }
     }
+
+    // Old minigame code for serialized stories
+    
+    // public (Line, Minigame) GetNext()
+    // {
+    //     int nextLine = _currentLine + 1;
+    //     Minigame minigameToReturn = null;
+    //     Line lineToReturn = lines[nextLine];
+    //
+    //     if (minigames.Length > 0)
+    //     {
+    //         int nextMinigame = _currentMinigame + 1;
+    //         minigameToReturn = minigames[nextMinigame].triggerOnLine == nextLine
+    //             ? minigames[nextMinigame].minigame
+    //             : null;
+    //         _currentMinigame = minigameToReturn != null ? nextMinigame : _currentMinigame;
+    //     }
+    //     _currentLine = nextLine;
+    //     return (lineToReturn, minigameToReturn);
+    // }
+    
+    
+    // public void SetCurrentLine(int lineNumber)
+    // {
+    //     _currentLine = lineNumber;
+    //     if (minigames.Length > 0)
+    //     {
+    //         int currentMinigameTarget = 0;
+    //         while (minigames[currentMinigameTarget].triggerOnLine <= _currentLine)
+    //         {
+    //             currentMinigameTarget++;
+    //         }
+    //
+    //         _currentMinigame = currentMinigameTarget - 1;
+    //     }
+    // }
 
 }

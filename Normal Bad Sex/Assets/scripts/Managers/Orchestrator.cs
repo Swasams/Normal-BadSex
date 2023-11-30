@@ -20,13 +20,13 @@ public class Orchestrator : MonoBehaviour
     
     private void Start()
     {
-        if (Application.isEditor)
-        {
-            if (overrideLine)
-            {
-                currentStory.SetCurrentLine(lastLineOverride);
-            }
-        } 
+        // if (Application.isEditor)
+        // {
+        //     if (overrideLine)
+        //     {
+        //         currentStory.SetCurrentLine(lastLineOverride);
+        //     }
+        // } 
         
         EventManager.Instance.Register<LineEnd>(@event => _dialogManagerIsWriting = false);
     }
@@ -57,7 +57,7 @@ public class Orchestrator : MonoBehaviour
 
     private void PlayNext()
     {
-        (_currentLine, _currentMinigame) = currentStory.GetNext();
+        //(_currentLine, _currentMinigame) = currentStory.GetNext();
         _currentMinigame?.Start();
         if (!_dialogManagerIsWriting)
         {

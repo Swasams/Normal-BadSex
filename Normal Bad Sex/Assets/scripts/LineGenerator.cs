@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using System.IO;
@@ -41,6 +42,9 @@ public static class LineGenerator
         string[] allEntries = File.ReadAllLines(_tsvFile);
         int index = 0;
 
+        Dictionary<string, List<Line>> linesPerCharacter = new Dictionary<string, List<Line>>();
+        List<Line> allLines = new List<Line>();
+
         foreach (var entry in allEntries)
         {
             // Skip first row, these are the titles
@@ -53,7 +57,17 @@ public static class LineGenerator
             string[] splitData = entry.Split('\t');
             if (splitData.Length == 6)
             {
-                ProcessLine(splitData, index);
+                Line processedLine = ProcessLine(splitData, index);
+                allLines.Add(processedLine);
+                if (linesPerCharacter.TryGetValue(processedLine.speaker.name,out var linesOfCharacter ))
+                {
+                    linesOfCharacter.Add(processedLine);
+                }
+                else
+                {
+                    linesOfCharacter = new List<Line> {processedLine};
+                    linesPerCharacter.Add(processedLine.speaker.name,linesOfCharacter);
+                }
             }
             else
             {
@@ -62,11 +76,27 @@ public static class LineGenerator
             index++;
             
         }
-
+        
+        // Check for existing story
+        string storyPath =  Path.GetDirectoryName(_tsvFile).Replace("\\","/") + $"/{_storyName}.asset";
+        Debug.Log(storyPath);
+        string relativeStoryPath = storyPath[storyPath.IndexOf("Assets/", StringComparison.Ordinal)..];
+        Story story;
+        if (File.Exists(storyPath))
+        {
+            story = AssetDatabase.LoadAssetAtPath<Story>(relativeStoryPath);
+        }
+        else
+        {
+            story = ScriptableObject.CreateInstance<Story>();
+        }
+        
+        story.SetLines(linesPerCharacter,allLines);
+        
         AssetDatabase.SaveAssets();
     }
 
-    public static void ProcessLine(string[] splitData, int index)
+    private static Line ProcessLine(string[] splitData, int index)
     {
         string linePath = _lineFolder + $"/{index:000}_{_storyName}.asset";
         string relativeLinePath = linePath[linePath.IndexOf("Assets/", StringComparison.Ordinal)..];
@@ -131,5 +161,7 @@ public static class LineGenerator
         {
             AssetDatabase.CreateAsset(line, relativeLinePath);
         }
+
+        return line;
     }
 }
