@@ -41,8 +41,7 @@ public static class LineGenerator
         
         string[] allEntries = File.ReadAllLines(_tsvFile);
         int index = 0;
-
-        Dictionary<string, List<Line>> linesPerCharacter = new Dictionary<string, List<Line>>();
+        
         List<Line> allLines = new List<Line>();
 
         foreach (var entry in allEntries)
@@ -59,15 +58,6 @@ public static class LineGenerator
             {
                 Line processedLine = ProcessLine(splitData, index);
                 allLines.Add(processedLine);
-                if (linesPerCharacter.TryGetValue(processedLine.speaker.name,out var linesOfCharacter ))
-                {
-                    linesOfCharacter.Add(processedLine);
-                }
-                else
-                {
-                    linesOfCharacter = new List<Line> {processedLine};
-                    linesPerCharacter.Add(processedLine.speaker.name,linesOfCharacter);
-                }
             }
             else
             {
@@ -79,7 +69,6 @@ public static class LineGenerator
         
         // Check for existing story
         string storyPath =  Path.GetDirectoryName(_tsvFile).Replace("\\","/") + $"/{_storyName}.asset";
-        Debug.Log(storyPath);
         string relativeStoryPath = storyPath[storyPath.IndexOf("Assets/", StringComparison.Ordinal)..];
         Story story;
         if (File.Exists(storyPath))
@@ -91,7 +80,7 @@ public static class LineGenerator
             story = ScriptableObject.CreateInstance<Story>();
         }
         
-        story.SetLines(linesPerCharacter,allLines);
+        story.SetLines(allLines);
         
         AssetDatabase.SaveAssets();
     }

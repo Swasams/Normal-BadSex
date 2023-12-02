@@ -1,25 +1,15 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Story", menuName = "Normal Bad Sex/Story", order = 2)]
 public class Story : ScriptableObject
 {
+    [SerializeField]
     public List<Line> lines;
-
-    [System.Serializable]
-    public class CharacterEntry
-    {
-        public string characterName;
-        public List<Line> lines;
-
-        public CharacterEntry(string characterName, List<Line> lines)
-        {
-            this.characterName = characterName;
-            this.lines = lines;
-        }
-    }
-
-    public List<CharacterEntry> linesByCharacters;
+    
+    
+    public Dictionary<String,List<Line>> linesByCharacters;
 
 
     private int _currentLine;
@@ -43,13 +33,26 @@ public class Story : ScriptableObject
         return _currentLine;
     }
 
-    public void SetLines(Dictionary<string, List<Line>> linesPerCharacter,List<Line> allLines )
+    public void SetLines(List<Line> allLines )
     {
         this.lines = allLines;
-        this.linesByCharacters = new List<CharacterEntry>();
-        foreach (var (character,lines) in linesPerCharacter)
+    }
+
+    public void CreateDictionary()
+    {
+        linesByCharacters = new Dictionary<string, List<Line>>();
+        foreach (var line in lines)
         {
-            linesByCharacters.Add(new CharacterEntry(character,lines));
+            if (linesByCharacters.TryGetValue(line.speaker.name,out var linesOfCharacter ))
+            {
+                linesOfCharacter.Add(line);
+                linesOfCharacter.Sort( (line1,line2) => (line1.lineNumber - line2.lineNumber) );
+            }
+            else
+            {
+                linesOfCharacter = new List<Line> {line};
+                linesByCharacters.Add(line.speaker.name,linesOfCharacter);
+            }
         }
     }
 

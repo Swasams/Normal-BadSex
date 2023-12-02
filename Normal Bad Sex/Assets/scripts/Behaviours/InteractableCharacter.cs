@@ -3,31 +3,47 @@ using UnityEngine;
 
 public class InteractableCharacter : MonoBehaviour
 {
-    public String characterName;
+    public Character character;
     public Line[] lines;
-    private Boolean _wasTriggered = false;
+    public GameObject isActiveObject;
+    private Boolean _isActive = false;
     
-    
+
 
     private void Start()
     {
-        // Notes for Julian
-        
-        //Should be ab le to find the Story
-        
-        // Load the lines corresponding to this character
-        
-        // Load the assets associated to the character
+        if (!GameManager.Instance.currentStory.linesByCharacters.TryGetValue(character.name , out var linesOfCharacter)) {
+           Debug.LogWarning($"Unable to find lines for character {character.name} in the story object {GameManager.Instance.currentStory.name} attached to the Game Manager");
+        }else {
+            lines = linesOfCharacter.ToArray();
+        }
+        isActiveObject.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && _isActive)
+        {
+            EventManager.Instance.Fire(new TriggerLines(lines));
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (!other.tag.Equals("Player")) return;
         
-        if (_wasTriggered) return;
+        if (_isActive) return;
 
-        _wasTriggered = true;
-        EventManager.Instance.Fire(new TriggerLines(lines));
+        _isActive = true;
+        isActiveObject.SetActive(true);
+        
     }
-    
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (!other.tag.Equals("Player")) return;
+        if (!_isActive) return;
+        _isActive = false;
+        isActiveObject.SetActive(false);
+    }
 }

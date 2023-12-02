@@ -4,16 +4,10 @@ public class OrchestratorV2 : MonoBehaviour
 {
     //References
     public AudioSource dialogSource;
-    
 
-    
-    //Properties
-    public int lastLineOverride;
-    public bool overrideLine;
-    
     // State
     private bool _stoppedPlaying;
-    private bool _storyStarted = false;
+    private bool _lineSequenceStarted = false;
     private Line _currentLine;
     private Minigame _currentMinigame;
     private bool _waitingForInput;
@@ -29,9 +23,11 @@ public class OrchestratorV2 : MonoBehaviour
 
     private void BeginLines(Line[] lines)
     {
-        if (_storyStarted) return;
+        //Ignore if a sequence is playing
+        if (_lineSequenceStarted) return;
+        
+        _lineSequenceStarted = true;
         _currentLines = lines;
-        _storyStarted = true;
         _waitingForInput = false;
         _dialogManagerIsWriting = false;
         _stoppedPlaying = true;
@@ -42,30 +38,42 @@ public class OrchestratorV2 : MonoBehaviour
 
     private void Update()
     {
-        if (!_storyStarted) return;
+
+        //Skip line
+        if (Input.GetKeyDown(KeyCode.S) && _lineSequenceStarted)
+        {
+            dialogSource.Stop();
+            _stoppedPlaying = true;
+            EventManager.Instance.Fire(new LineSkipped());
+        }
+
+        if (!_lineSequenceStarted) return;
         
         if (!ShouldPlayNext()) return;
 
         PlayNext();
 
     }
+    
+    
 
     private void PlayNext()
     {
-        
-        _currentLine = _currentLines[_lineCounter];
-        _lineCounter++;
         if (_currentLines.Length == _lineCounter)
         {
-            _storyStarted = false;
+            _lineSequenceStarted = false;
+            return;
         }
 
+        _currentLine = _currentLines[_lineCounter];
         if (!_dialogManagerIsWriting)
         {
             dialogSource.PlayOneShot(_currentLine.audioFile);
             _dialogManagerIsWriting = true;
             EventManager.Instance.Fire(new LineStart(_currentLine));
         }
+        
+        _lineCounter++;
     }
 
 

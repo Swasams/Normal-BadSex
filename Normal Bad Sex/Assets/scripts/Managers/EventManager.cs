@@ -110,6 +110,13 @@ public class LineEnd : NbsEvent
     }
 }
 
+public class LineSkipped : NbsEvent
+{
+    public LineSkipped()
+    {
+    }
+}
+
 public class TriggerLines : NbsEvent
 {
     public readonly Line[] lines;

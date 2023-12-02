@@ -3,7 +3,7 @@ using UnityEngine;
 public class Orchestrator : MonoBehaviour
 {
     //References
-    public Story currentStory;
+   
     public AudioSource dialogSource;
 
     //Properties
@@ -11,6 +11,7 @@ public class Orchestrator : MonoBehaviour
     public bool overrideLine;
     
     // State
+     public Story currentStory;
     private bool _stoppedPlaying;
     private bool _storyStarted = false;
     private Line _currentLine;

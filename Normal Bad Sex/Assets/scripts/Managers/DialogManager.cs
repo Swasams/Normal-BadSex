@@ -21,6 +21,7 @@ public class DialogManager : MonoBehaviour
     private void Start()
     {
         EventManager.Instance.Register<LineStart>(StartLine);
+        EventManager.Instance.Register<LineSkipped>(SkipLine);
         panel.SetActive(false);
     }
     
@@ -71,9 +72,12 @@ public class DialogManager : MonoBehaviour
         _timeSinceLastCharacter = 0;
         _timeBetweenCharacters = (_currentLine.line.audioFile.length / _currentLine.line.lineText.Length) * (1 - characterSpeedFactor);
         panel.SetActive(true);
-
     }
     
+    private void SkipLine(NbsEvent e){
+        _lineIsFinished = true;
+    }
+
     private void AdvanceLine()
     {
         if (textArea.maxVisibleCharacters < textArea.text.Length)
