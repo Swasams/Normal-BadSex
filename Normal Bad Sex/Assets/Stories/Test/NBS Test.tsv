@@ -1,0 +1,5 @@
+Line	AudioFileName	Character	Start AnimationName	End Animation Name	autoAdvanceOnEnd
+em sooo	1	Clown	testStartAnim	endAnim	FALSE
+I don't care	2	Lion	testStartAnim2	endAnim2	TRUE
+testing this line	3	Clown			
+and here is another test	4	Lion			
