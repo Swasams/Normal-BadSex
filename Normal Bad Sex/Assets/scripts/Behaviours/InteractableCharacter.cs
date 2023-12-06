@@ -28,7 +28,7 @@ public class InteractableCharacter : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.tag.Equals("Player")) return;
         
@@ -39,7 +39,7 @@ public class InteractableCharacter : MonoBehaviour
         
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (!other.tag.Equals("Player")) return;
         if (!_isActive) return;

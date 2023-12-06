@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c331b6c01f566d34c917e198ec2d2da9, type: 3}
-  m_Name: CatholicSchool
+  m_Name: YoungMJ
   m_EditorClassIdentifier: 
   defaultPortrait: {fileID: 0}
-  name: CatholicSchool
+  name: YoungMJ
