@@ -8,7 +8,9 @@ public class PlayerController : MonoBehaviour
     {
         EventManager.Instance.Register<MouseClick>(MoveTo);
         _agent = GetComponent<NavMeshAgent>();
-        _agent.destination = transform.position; 
+        _agent.destination = transform.position;
+        _agent.updateRotation = false;
+        _agent.updateUpAxis = false;
     }
 
     void MoveTo(NbsEvent clickEvent)
