@@ -25,8 +25,7 @@ public class PointerController : MonoBehaviour
             RaycastHit hit;
 
             Vector3 screenToWorld = _cam.ScreenToWorldPoint(_mousePosition);
-            Vector3 pointToCameraDirection = (_cam.transform.forward - screenToWorld).normalized;
-            
+
             if (Physics.Raycast(ray, out hit,1000,_mask))
             {
                 Debug.DrawLine(screenToWorld,hit.point,Color.red,5);
