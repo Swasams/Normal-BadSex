@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2064318669783068390
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1602313601349420442, guid: b78bcff345187b14eb9a277440f8c146, type: 3}
+      propertyPath: m_TagString
+      value: WindowLocation
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602313601973193324, guid: b78bcff345187b14eb9a277440f8c146, type: 3}
+      propertyPath: m_TagString
+      value: DoorLocation
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602313602070184770, guid: b78bcff345187b14eb9a277440f8c146, type: 3}
+      propertyPath: m_TagString
+      value: WindowLocation
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602313602748156635, guid: b78bcff345187b14eb9a277440f8c146, type: 3}
+      propertyPath: m_TagString
+      value: WindowLocation
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602313602754600835, guid: b78bcff345187b14eb9a277440f8c146, type: 3}
+      propertyPath: m_TagString
+      value: DoorLocation
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793560991295821140, guid: b78bcff345187b14eb9a277440f8c146, type: 3}
+      propertyPath: m_Name
+      value: BuildingGenerator
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098802272945950888, guid: b78bcff345187b14eb9a277440f8c146, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098802272945950888, guid: b78bcff345187b14eb9a277440f8c146, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.03999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098802272945950888, guid: b78bcff345187b14eb9a277440f8c146, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 20.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098802272945950888, guid: b78bcff345187b14eb9a277440f8c146, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098802272945950888, guid: b78bcff345187b14eb9a277440f8c146, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098802272945950888, guid: b78bcff345187b14eb9a277440f8c146, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098802272945950888, guid: b78bcff345187b14eb9a277440f8c146, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098802272945950888, guid: b78bcff345187b14eb9a277440f8c146, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098802272945950888, guid: b78bcff345187b14eb9a277440f8c146, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098802272945950888, guid: b78bcff345187b14eb9a277440f8c146, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098802272945950888, guid: b78bcff345187b14eb9a277440f8c146, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b78bcff345187b14eb9a277440f8c146, type: 3}

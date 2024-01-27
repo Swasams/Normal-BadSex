@@ -11,6 +11,11 @@ TagManager:
   - clothingcol
   - UpSensor
   - DownSensor
+  - WIndowLocation
+  - DoorLocation
+  - WindowLocation
+  - WindowsillLocation
+  - WallLocation
   layers:
   - Default
   - TransparentFX
