@@ -19,8 +19,10 @@ public class CustomBuilding : Editor
             // Find the parent GameObject of the BuildingGenerator instance
             GameObject buildingInstance = ((Component)target).gameObject;
 
-            // Call the RandomizeElements method on the specific instance with the GameObject argument
+            // Call the RandomizeElements method on the specific instance
             buildingGenerator.RandomizeElements(buildingInstance);
         }
+
+       
     }
 }

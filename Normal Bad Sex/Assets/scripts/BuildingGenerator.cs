@@ -7,46 +7,53 @@ public class BuildingGenerator : MonoBehaviour
     public GameObject[] windowsVarieties;
     public GameObject[] doorVarieties;
     public GameObject[] windowsillVarieties;
-   // public GameObject[] Wall;
-   // public Material[] woodTextures;
+    // public GameObject[] Wall;
+    // public Material[] woodTextures;
+
+    public Transform[] windowsSpawnPoints; // Array of spawn points for windows
+    public Transform[] doorSpawnPoints; // Array of spawn points for doors
+    public Transform[] windowsillSpawnPoints; // Array of spawn points for window sills
+
+    public Color[] colors; // Array of colors for randomization
 
     private bool hasWindows;
     private bool hasDoor;
     private bool hasWindowsill;
     private bool useWoodTexture;
 
-    public void RandomizeElements(GameObject buildingInstance)
+    public void RandomizeElements(GameObject mainPrefab)
     {
         hasWindows = Random.Range(0, 2) == 0; // 50% chance of having windows
         hasDoor = Random.Range(0, 2) == 0; // 50% chance of having a door
         hasWindowsill = Random.Range(0, 2) == 0; // 50% chance of having a windowsill
         useWoodTexture = Random.Range(0, 2) == 0; // 50% chance of using wood texture
 
-        GenerateBuilding();
+        GenerateBuilding(mainPrefab);
     }
 
-    void GenerateBuilding()
+    void GenerateBuilding(GameObject mainPrefab)
     {
-        //DestroyPreviousElements();
+        //DestroyPreviousElements(); // Uncomment this if needed
 
         if (hasWindows)
         {
-            InstantiateElementsAtLocations(windowsVarieties, "WindowLocation");
+            int randomIndex = Random.Range(0, windowsSpawnPoints.Length);
+            GameObject windows = InstantiateElement(windowsVarieties, windowsSpawnPoints[randomIndex], mainPrefab);
+            ChangeColors(windows);
         }
-
-        
-   
-           // InstantiateElementsAtLocations(Wall, "WallLocation");
-        
 
         if (hasDoor)
         {
-            InstantiateElementsAtLocations(doorVarieties, "DoorLocation");
+            int randomIndex = Random.Range(0, doorSpawnPoints.Length);
+            GameObject door = InstantiateElement(doorVarieties, doorSpawnPoints[randomIndex], mainPrefab);
+            ChangeColors(door);
         }
 
         if (hasWindowsill)
         {
-            InstantiateElementsAtLocations(windowsillVarieties, "WindowsillLocation");
+            int randomIndex = Random.Range(0, windowsillSpawnPoints.Length);
+            GameObject windowsill = InstantiateElement(windowsillVarieties, windowsillSpawnPoints[randomIndex], mainPrefab);
+            ChangeColors(windowsill);
         }
 
         /*if (useWoodTexture)
@@ -55,16 +62,29 @@ public class BuildingGenerator : MonoBehaviour
         }*/
     }
 
-    void InstantiateElementsAtLocations(GameObject[] prefabVarieties, string locationTag)
+    GameObject InstantiateElement(GameObject[] prefabVarieties, Transform spawnPoint, GameObject mainPrefab)
     {
-        GameObject[] locations = GameObject.FindGameObjectsWithTag(locationTag);
+        int randomIndex = Random.Range(0, prefabVarieties.Length);
+        GameObject newElement = Instantiate(prefabVarieties[randomIndex], spawnPoint.position, Quaternion.identity, mainPrefab.transform);
+        newElement.transform.SetParent(spawnPoint); // Set the newly instantiated element as a child of the spawn point
+        return newElement;
+    }
 
-        foreach (GameObject location in locations)
+    void ChangeColors(GameObject prefabInstance)
+    {
+        Renderer[] renderers = prefabInstance.GetComponentsInChildren<Renderer>();
+
+        foreach (Renderer renderer in renderers)
         {
-            int randomIndex = Random.Range(0, prefabVarieties.Length);
-            Instantiate(prefabVarieties[randomIndex], location.transform.position, Quaternion.identity, transform);
+            Material[] materials = renderer.sharedMaterials;
+
+            foreach (Material material in materials)
+            {
+                material.color = colors[Random.Range(0, colors.Length)];
+            }
         }
     }
+
 
     /*void ApplyRandomWoodTexture()
     {
@@ -79,10 +99,10 @@ public class BuildingGenerator : MonoBehaviour
 
     //void DestroyPreviousElements()
     //{
-        // Destroy any existing elements in the building
-        //foreach (Transform child in transform)
-        //{
-           // Destroy(child.gameObject);
-        //}
+    // Destroy any existing elements in the building
+    //foreach (Transform child in transform)
+    //{
+    // Destroy(child.gameObject);
+    //}
     //}
 }

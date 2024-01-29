@@ -331,3 +331,9 @@ MonoBehaviour:
   windowsillVarieties:
   - {fileID: 7776133247924827778, guid: fe77ea85fd863a749baf3767654d066e, type: 3}
   - {fileID: 9152244802732566634, guid: cc9804091c0bb6a468c3d21da837f385, type: 3}
+  spiritSprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
