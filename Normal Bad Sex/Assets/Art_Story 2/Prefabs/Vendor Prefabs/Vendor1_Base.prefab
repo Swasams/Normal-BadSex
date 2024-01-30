@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1360264369269334603}
   m_Layer: 0
   m_Name: Vendor1_RoomInside
-  m_TagString: Untagged
+  m_TagString: Inner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 1360264369561799973}
   m_Layer: 0
   m_Name: Vendor1_Details
-  m_TagString: Untagged
+  m_TagString: Inner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 1360264370032283037}
   m_Layer: 0
   m_Name: Vendor1_Canopy
-  m_TagString: Untagged
+  m_TagString: Inner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 1360264370123640071}
   m_Layer: 0
   m_Name: Vendor1_Showcase
-  m_TagString: Untagged
+  m_TagString: Outer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 1360264370299134802}
   m_Layer: 0
   m_Name: Vendor1_Base
-  m_TagString: Untagged
+  m_TagString: Outer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

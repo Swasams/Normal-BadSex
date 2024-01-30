@@ -16,6 +16,9 @@ TagManager:
   - WindowLocation
   - WindowsillLocation
   - WallLocation
+  - Outer
+  - Inner
+  - Wall
   layers:
   - Default
   - TransparentFX

@@ -22,7 +22,12 @@ public class CustomBuilding : Editor
             // Call the RandomizeElements method on the specific instance
             buildingGenerator.RandomizeElements(buildingInstance);
         }
+        if (GUILayout.Button("Change Colors"))
+        {
+            // Trigger the color change method
+            buildingGenerator.ChangeColors(buildingGenerator.gameObject);
+        }
 
-       
+
     }
 }

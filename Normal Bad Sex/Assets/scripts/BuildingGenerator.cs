@@ -7,102 +7,116 @@ public class BuildingGenerator : MonoBehaviour
     public GameObject[] windowsVarieties;
     public GameObject[] doorVarieties;
     public GameObject[] windowsillVarieties;
-    // public GameObject[] Wall;
-    // public Material[] woodTextures;
-
     public Transform[] windowsSpawnPoints; // Array of spawn points for windows
     public Transform[] doorSpawnPoints; // Array of spawn points for doors
     public Transform[] windowsillSpawnPoints; // Array of spawn points for window sills
-
-    public Color[] colors; // Array of colors for randomization
+    public GameObject wallPrefab;
+    public Color[] innerColors; // Array of colors for inner elements
+    public Color[] outerColors; // Array of colors for outer elements
+    public Color[] wallColors;
 
     private bool hasWindows;
     private bool hasDoor;
     private bool hasWindowsill;
-    private bool useWoodTexture;
+   // private bool useWoodTexture;
 
     public void RandomizeElements(GameObject mainPrefab)
     {
-        hasWindows = Random.Range(0, 2) == 0; // 50% chance of having windows
-        hasDoor = Random.Range(0, 2) == 0; // 50% chance of having a door
+        //DestroyPreviousElements(mainPrefab);
+
+        hasWindows = true; // Always spawn windows
+        hasDoor = true; // Always spawn door
         hasWindowsill = Random.Range(0, 2) == 0; // 50% chance of having a windowsill
-        useWoodTexture = Random.Range(0, 2) == 0; // 50% chance of using wood texture
+        //useWoodTexture = Random.Range(0, 2) == 0; // 50% chance of using wood texture
 
         GenerateBuilding(mainPrefab);
     }
 
     void GenerateBuilding(GameObject mainPrefab)
     {
-        //DestroyPreviousElements(); // Uncomment this if needed
+ 
+            ChangeColors(wallPrefab);
+       
 
         if (hasWindows)
         {
-            int randomIndex = Random.Range(0, windowsSpawnPoints.Length);
-            GameObject windows = InstantiateElement(windowsVarieties, windowsSpawnPoints[randomIndex], mainPrefab);
-            ChangeColors(windows);
+            foreach (Transform spawnPoint in windowsSpawnPoints)
+            {
+                GameObject windows = InstantiateElement(GetRandomVariety(windowsVarieties), spawnPoint, mainPrefab);
+                ChangeColors(windows);
+            }
         }
 
         if (hasDoor)
         {
-            int randomIndex = Random.Range(0, doorSpawnPoints.Length);
-            GameObject door = InstantiateElement(doorVarieties, doorSpawnPoints[randomIndex], mainPrefab);
-            ChangeColors(door);
+            foreach (Transform spawnPoint in doorSpawnPoints)
+            {
+                GameObject door = InstantiateElement(GetRandomVariety(doorVarieties), spawnPoint, mainPrefab);
+                ChangeColors(door);
+            }
         }
 
         if (hasWindowsill)
         {
-            int randomIndex = Random.Range(0, windowsillSpawnPoints.Length);
-            GameObject windowsill = InstantiateElement(windowsillVarieties, windowsillSpawnPoints[randomIndex], mainPrefab);
-            ChangeColors(windowsill);
+            int numWindowsills = Random.Range(1, 7); // Random number of windowsills between 1 and 6
+            for (int i = 0; i < numWindowsills; i++)
+            {
+                int randomIndex = Random.Range(0, windowsillSpawnPoints.Length);
+                GameObject windowsill = InstantiateElement(GetRandomVariety(windowsillVarieties), windowsillSpawnPoints[randomIndex], mainPrefab);
+                ChangeColors(windowsill);
+            }
         }
-
-        /*if (useWoodTexture)
-        {
-            ApplyRandomWoodTexture();
-        }*/
     }
 
-    GameObject InstantiateElement(GameObject[] prefabVarieties, Transform spawnPoint, GameObject mainPrefab)
+    GameObject InstantiateElement(GameObject prefabVariety, Transform spawnPoint, GameObject mainPrefab)
     {
-        int randomIndex = Random.Range(0, prefabVarieties.Length);
-        GameObject newElement = Instantiate(prefabVarieties[randomIndex], spawnPoint.position, Quaternion.identity, mainPrefab.transform);
+        GameObject newElement = Instantiate(prefabVariety, spawnPoint.position, Quaternion.identity, mainPrefab.transform);
         newElement.transform.SetParent(spawnPoint); // Set the newly instantiated element as a child of the spawn point
         return newElement;
     }
 
-    void ChangeColors(GameObject prefabInstance)
+    GameObject GetRandomVariety(GameObject[] varieties)
     {
-        Renderer[] renderers = prefabInstance.GetComponentsInChildren<Renderer>();
+        int randomIndex = Random.Range(0, varieties.Length);
+        return varieties[randomIndex];
+    }
 
-        foreach (Renderer renderer in renderers)
+    public void ChangeColors(GameObject prefabInstance)
+    {
+        // Get all child GameObjects of the prefab instance
+        Transform[] childTransforms = prefabInstance.GetComponentsInChildren<Transform>(true);
+
+        // Iterate over each child GameObject
+        foreach (Transform childTransform in childTransforms)
         {
-            Material[] materials = renderer.sharedMaterials;
+            // Get the SpriteRenderer component of the child (if it has one)
+            SpriteRenderer spriteRenderer = childTransform.GetComponent<SpriteRenderer>();
 
-            foreach (Material material in materials)
+            // If the child has a SpriteRenderer component, change its color based on the tag of the prefab instance
+            if (spriteRenderer != null)
             {
-                material.color = colors[Random.Range(0, colors.Length)];
+                Color newColor = Color.white;
+
+                // Check for each tag and adjust color accordingly
+                if (prefabInstance.CompareTag("Inner"))
+                {
+                    newColor = innerColors[Random.Range(0, innerColors.Length)];
+                }
+                else if (prefabInstance.CompareTag("Outer"))
+                {
+                    newColor = outerColors[Random.Range(0, outerColors.Length)];
+                }
+                else if (prefabInstance.CompareTag("Wall"))
+                {
+                    newColor = wallColors[Random.Range(0, wallColors.Length)];
+                }
+
+                spriteRenderer.color = newColor;
             }
         }
     }
 
 
-    /*void ApplyRandomWoodTexture()
-    {
-        int randomIndex = Random.Range(0, woodTextures.Length);
-        Renderer[] renderers = GetComponentsInChildren<Renderer>();
-
-        foreach (Renderer renderer in renderers)
-        {
-            renderer.material = woodTextures[randomIndex];
-        }
-    }*/
-
-    //void DestroyPreviousElements()
-    //{
-    // Destroy any existing elements in the building
-    //foreach (Transform child in transform)
-    //{
-    // Destroy(child.gameObject);
-    //}
-    //}
 }
+
+

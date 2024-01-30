@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 2503492144859199855}
   m_Layer: 0
   m_Name: BG panel
-  m_TagString: Untagged
+  m_TagString: Inner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 7058516319597364331}
   m_Layer: 0
   m_Name: Fancy_planter
-  m_TagString: Untagged
+  m_TagString: Outer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

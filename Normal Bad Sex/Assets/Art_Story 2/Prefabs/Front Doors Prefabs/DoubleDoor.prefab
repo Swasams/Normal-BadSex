@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 929224422006912525}
   m_Layer: 0
   m_Name: DoubleDoor
-  m_TagString: Untagged
+  m_TagString: Outer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 929224422353600554}
   m_Layer: 0
   m_Name: DoubleDoor_DoorsFill
-  m_TagString: Untagged
+  m_TagString: Outer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 929224422373987763}
   m_Layer: 0
   m_Name: InsideDecor
-  m_TagString: Untagged
+  m_TagString: Outer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 3202745971609649837}
   m_Layer: 0
   m_Name: background
-  m_TagString: Untagged
+  m_TagString: Inner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 806784001586850059}
   m_Layer: 0
   m_Name: Window1_RoomInside (2)
-  m_TagString: Untagged
+  m_TagString: Inner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 7322399442179102865}
   m_Layer: 0
   m_Name: Window1_WallPart
-  m_TagString: Untagged
+  m_TagString: Outer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 1543916893842693060}
   m_Layer: 0
   m_Name: Window1_RoomInside (1)
-  m_TagString: Untagged
+  m_TagString: Inner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 6838302772621310523}
   m_Layer: 0
   m_Name: Window1_FrameInside
-  m_TagString: Untagged
+  m_TagString: Inner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 6838302773328644605}
   m_Layer: 0
   m_Name: Window1_Frame
-  m_TagString: Untagged
+  m_TagString: Outer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 6838302773398671182}
   m_Layer: 0
   m_Name: Window1_RoomInside
-  m_TagString: Untagged
+  m_TagString: Inner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -768,7 +768,7 @@ GameObject:
   - component: {fileID: 6838302774226822079}
   m_Layer: 0
   m_Name: Window1_Base
-  m_TagString: Untagged
+  m_TagString: Outer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
