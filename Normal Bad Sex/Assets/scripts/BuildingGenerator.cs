@@ -18,7 +18,7 @@ public class BuildingGenerator : MonoBehaviour
     private bool hasWindows;
     private bool hasDoor;
     private bool hasWindowsill;
-   // private bool useWoodTexture;
+    // private bool useWoodTexture;
 
     public void RandomizeElements(GameObject mainPrefab)
     {
@@ -34,9 +34,9 @@ public class BuildingGenerator : MonoBehaviour
 
     void GenerateBuilding(GameObject mainPrefab)
     {
- 
-            ChangeColors(wallPrefab);
-       
+
+        ChangeColors(wallPrefab);
+
 
         if (hasWindows)
         {
@@ -70,29 +70,94 @@ public class BuildingGenerator : MonoBehaviour
 
     GameObject InstantiateElement(GameObject prefabVariety, Transform spawnPoint, GameObject mainPrefab)
     {
-        GameObject newElement = Instantiate(prefabVariety, spawnPoint.position, Quaternion.identity, mainPrefab.transform);
-        newElement.transform.SetParent(spawnPoint); // Set the newly instantiated element as a child of the spawn point
+        // Instantiate the prefabVariety at the spawnPoint position with the same rotation as the mainPrefab
+        GameObject newElement = Instantiate(prefabVariety, spawnPoint.position, mainPrefab.transform.rotation);
+
+        // Set the newly instantiated element as a child of the spawnPoint
+        newElement.transform.SetParent(spawnPoint);
+
         return newElement;
     }
+
 
     GameObject GetRandomVariety(GameObject[] varieties)
     {
         int randomIndex = Random.Range(0, varieties.Length);
         return varieties[randomIndex];
     }
-
-    public void ChangeColors(GameObject prefabInstance)
+    public void ChangeColorsRecursively(GameObject gameObject)
     {
-        // Get all child GameObjects of the prefab instance
-        Transform[] childTransforms = prefabInstance.GetComponentsInChildren<Transform>(true);
+        // Create a HashSet to store visited GameObjects
+        HashSet<GameObject> visited = new HashSet<GameObject>();
 
-        // Iterate over each child GameObject
-        foreach (Transform childTransform in childTransforms)
+        // Call the helper method to recursively change colors
+        ChangeColorsRecursivelyHelper(gameObject.transform, visited);
+    }
+
+    private void ChangeColorsRecursivelyHelper(Transform transform, HashSet<GameObject> visited)
+    {
+        // Get the GameObject associated with the current Transform
+        GameObject gameObject = transform.gameObject;
+
+        // If the GameObject has been visited before, return to avoid infinite loops
+        if (visited.Contains(gameObject))
         {
-            // Get the SpriteRenderer component of the child (if it has one)
-            SpriteRenderer spriteRenderer = childTransform.GetComponent<SpriteRenderer>();
+            return;
+        }
 
-            // If the child has a SpriteRenderer component, change its color based on the tag of the prefab instance
+        // Mark the current GameObject as visited
+        visited.Add(gameObject);
+
+        // Get the SpriteRenderer component of the GameObject
+        SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+
+        // If the GameObject has a SpriteRenderer component, change its color based on its parent's tag
+        if (spriteRenderer != null)
+        {
+            Color newColor = Color.white;
+
+            if (gameObject.CompareTag("Inner"))
+            {
+                newColor = innerColors[Random.Range(0, innerColors.Length)];
+            }
+            else if (gameObject.CompareTag("Outer"))
+            {
+                newColor = outerColors[Random.Range(0, outerColors.Length)];
+            }
+            else if (gameObject.CompareTag("Wall"))
+            {
+                newColor = wallColors[Random.Range(0, wallColors.Length)];
+            }
+
+            spriteRenderer.color = newColor;
+        }
+
+        // Recursively call this method for each child Transform
+        foreach (Transform childTransform in transform)
+        {
+            ChangeColorsRecursivelyHelper(childTransform, visited);
+        }
+    }
+
+
+public void ChangeColors(GameObject prefabInstance)
+    {
+        // Create a queue to store the child objects to be processed
+        Queue<Transform> queue = new Queue<Transform>();
+
+        // Enqueue the root object
+        queue.Enqueue(prefabInstance.transform);
+
+        // Iterate over the queue until it's empty
+        while (queue.Count > 0)
+        {
+            // Dequeue the next object
+            Transform currentTransform = queue.Dequeue();
+
+            // Get the SpriteRenderer component of the current object (if it has one)
+            SpriteRenderer spriteRenderer = currentTransform.GetComponent<SpriteRenderer>();
+
+            // If the current object has a SpriteRenderer component, change its color based on the tag of the prefab instance
             if (spriteRenderer != null)
             {
                 Color newColor = Color.white;
@@ -113,10 +178,13 @@ public class BuildingGenerator : MonoBehaviour
 
                 spriteRenderer.color = newColor;
             }
+
+            // Enqueue all child objects for further processing
+            foreach (Transform childTransform in currentTransform)
+            {
+                queue.Enqueue(childTransform);
+            }
         }
     }
-
-
 }
-
-
+    

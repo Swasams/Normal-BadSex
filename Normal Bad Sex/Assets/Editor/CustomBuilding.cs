@@ -25,7 +25,7 @@ public class CustomBuilding : Editor
         if (GUILayout.Button("Change Colors"))
         {
             // Trigger the color change method
-            buildingGenerator.ChangeColors(buildingGenerator.gameObject);
+            buildingGenerator.ChangeColorsRecursively(buildingGenerator.gameObject);
         }
 
 
