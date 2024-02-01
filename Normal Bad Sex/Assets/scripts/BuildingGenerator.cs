@@ -7,15 +7,18 @@ public class BuildingGenerator : MonoBehaviour
     public GameObject[] windowsVarieties;
     public GameObject[] doorVarieties;
     public GameObject[] windowsillVarieties;
+    public GameObject[] curtainVarieties;
     public Transform[] windowsSpawnPoints; // Array of spawn points for windows
     public Transform[] doorSpawnPoints; // Array of spawn points for doors
-    public Transform[] windowsillSpawnPoints; // Array of spawn points for window sills
+    public Transform[] windowsillSpawnPoints;
+    public Transform[] CurtainSpawnPoints;// Array of spawn points for window sills
     public GameObject wallPrefab;
     public Color[] innerColors; // Array of colors for inner elements
     public Color[] outerColors; // Array of colors for outer elements
     public Color[] wallColors;
 
     private bool hasWindows;
+    private bool hasCurtains;
     private bool hasDoor;
     private bool hasWindowsill;
     // private bool useWoodTexture;
@@ -26,7 +29,8 @@ public class BuildingGenerator : MonoBehaviour
 
         hasWindows = true; // Always spawn windows
         hasDoor = true; // Always spawn door
-        hasWindowsill = Random.Range(0, 2) == 0; // 50% chance of having a windowsill
+        hasWindowsill = true;
+        hasCurtains = true;// 50% chance of having a windowsill
         //useWoodTexture = Random.Range(0, 2) == 0; // 50% chance of using wood texture
 
         GenerateBuilding(mainPrefab);
@@ -64,6 +68,16 @@ public class BuildingGenerator : MonoBehaviour
                 int randomIndex = Random.Range(0, windowsillSpawnPoints.Length);
                 GameObject windowsill = InstantiateElement(GetRandomVariety(windowsillVarieties), windowsillSpawnPoints[randomIndex], mainPrefab);
                 ChangeColors(windowsill);
+            }
+        }
+        if (hasCurtains)
+        {
+            int numCurtains = Random.Range(1, 10); // Random number of curtains between 1 and 9
+            for (int i = 0; i < numCurtains; i++)
+            {
+                int randomIndex = Random.Range(0, windowsillSpawnPoints.Length);
+                GameObject curtain = InstantiateElement(GetRandomVariety(curtainVarieties), CurtainSpawnPoints[randomIndex], mainPrefab);
+                ChangeColors(curtain);
             }
         }
     }
