@@ -2,38 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WASD : MonoBehaviour
+public class WASD: MonoBehaviour
 {
-    public float moveSpeed = 5;
+    private Rigidbody2D rb;
+    private float moveH, moveV;
+    [SerializeField] private float moveSpeed = 1.0f;
+    public static WASD instance;
+  
 
     void Start()
     {
-
+        // this.transform.position = new Vector2(11, -16);
     }
-
-    void Update()
+    private void Awake()
     {
 
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.position += Vector3.right * moveSpeed * Time.deltaTime;
-
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.position += Vector3.right * -moveSpeed * Time.deltaTime;
-
-        }
-
-        else if (Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.position += Vector3.up * moveSpeed * Time.deltaTime;
-
-        }
-        else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.position += Vector3.up * -moveSpeed * Time.deltaTime;
-
-        }
+        rb = GetComponent<Rigidbody2D>();
     }
+    private void FixedUpdate()
+    {
+        moveH = Input.GetAxis("Horizontal") * moveSpeed;
+        moveV = Input.GetAxis("Vertical") * moveSpeed;
+        rb.velocity = new Vector2(moveH, moveV);//OPTIONAL rb.MovePosition();
+
+        Vector2 direction = new Vector2(moveH, moveV);
+
+
+
+       
+    }
+
 }
