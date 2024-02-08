@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6988182075657314912}
   - component: {fileID: 1229186600777211705}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: plant2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 387331580219881616}
   - component: {fileID: 2503492144859199855}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BG panel
   m_TagString: Inner
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1660557249758689235}
   - component: {fileID: 1127762783842305121}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: plant1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7304692963970610953}
   - component: {fileID: 7390040614675046314}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: plant3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7469320397672438368}
   - component: {fileID: 7058516319597364331}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fancy_planter
   m_TagString: Outer
   m_Icon: {fileID: 0}
@@ -435,7 +435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1865189256940941350}
   - component: {fileID: 7762113617504318426}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: plant4
   m_TagString: Untagged
   m_Icon: {fileID: 0}

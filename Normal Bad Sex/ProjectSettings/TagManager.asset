@@ -19,11 +19,15 @@ TagManager:
   - Outer
   - Inner
   - Wall
+  - Window
+  - Door
+  - Windowsill
+  - Curtain
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - BuildingElements
   - Water
   - UI
   - Walkable

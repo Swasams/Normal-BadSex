@@ -27,7 +27,14 @@ public class CustomBuilding : Editor
             // Trigger the color change method
             buildingGenerator.ChangeColorsRecursively(buildingGenerator.gameObject);
         }
+        if (GUILayout.Button("Reset Elements"))
+        {
+            if (buildingGenerator != null)
+            {
+                // Call the ResetPrefab method
+                buildingGenerator.ResetElements();
+            }
+        }
 
-
-    }
+        }
 }

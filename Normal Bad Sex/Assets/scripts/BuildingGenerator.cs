@@ -22,7 +22,8 @@ public class BuildingGenerator : MonoBehaviour
     private bool hasDoor;
     private bool hasWindowsill;
     // private bool useWoodTexture;
-
+    private GameObject originalPrefab;
+    public LayerMask newElementsLayer;
     public void RandomizeElements(GameObject mainPrefab)
     {
         //DestroyPreviousElements(mainPrefab);
@@ -34,6 +35,16 @@ public class BuildingGenerator : MonoBehaviour
         //useWoodTexture = Random.Range(0, 2) == 0; // 50% chance of using wood texture
 
         GenerateBuilding(mainPrefab);
+
+        if (originalPrefab == null)
+        {
+            originalPrefab = mainPrefab;
+        }
+        else
+        {
+            // Destroy the previous mainPrefab instance
+            Destroy(mainPrefab);
+        }
     }
 
     void GenerateBuilding(GameObject mainPrefab)
@@ -154,7 +165,7 @@ public class BuildingGenerator : MonoBehaviour
     }
 
 
-public void ChangeColors(GameObject prefabInstance)
+    public void ChangeColors(GameObject prefabInstance)
     {
         // Create a queue to store the child objects to be processed
         Queue<Transform> queue = new Queue<Transform>();
@@ -200,5 +211,34 @@ public void ChangeColors(GameObject prefabInstance)
             }
         }
     }
+    public void ResetElements()
+    {
+        // Find all objects with the specified layer
+        GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
+
+        // Iterate over each object found
+        foreach (GameObject obj in allObjects)
+        {
+            // Check if the object is not a wall and belongs to the specified layer
+            if (!obj.CompareTag("Wall"))
+            {
+                // Destroy the object
+                DestroyImmediate(obj);
+            }
+        }
+    }
+    private void RemoveAddedElements(GameObject prefabInstance)
+    {
+        // Iterate through the child objects of the prefab instance
+        foreach (Transform child in prefabInstance.transform)
+        {
+            // Check if the child object belongs to the new elements layer
+            if ((newElementsLayer & (1 << child.gameObject.layer)) != 0)
+            {
+                // Destroy the added elemen
+                DestroyImmediate(child.gameObject);
+            }
+        }
+    } 
 }
     
