@@ -52,6 +52,16 @@ public class titlescene : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+    public void Maryjane()
+    {
+        SceneManager.LoadScene("MaryJane");
+        Destroy(frame);
+        Destroy(frame2);
+        Destroy(frame3);
+        Destroy(starter);
+        Destroy(pod);
+        Destroy(creators);
+    }
     public void cenza()
     {
         SceneManager.LoadScene("Cenza 5 Min");
