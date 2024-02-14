@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -73,7 +74,7 @@ public class DialogManager : MonoBehaviour
         _timeBetweenCharacters = (_currentLine.line.audioFile.length / _currentLine.line.lineText.Length) * (1 - characterSpeedFactor);
         panel.SetActive(true);
     }
-    
+
     private void SkipLine(NbsEvent e){
         _lineIsFinished = true;
     }
