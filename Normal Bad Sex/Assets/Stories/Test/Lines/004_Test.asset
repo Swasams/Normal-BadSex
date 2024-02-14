@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feba5b418d597df4ea09517a7b3df9b8, type: 3}
   m_Name: 004_Test
   m_EditorClassIdentifier: 
-  audioFile: {fileID: 8300000, guid: f4f8f143fcdeb1a4f91c24b40d81e368, type: 3}
+  audioFile: {fileID: 0}
   lineText: and here is another test
   speaker: {fileID: 11400000, guid: 4a3d4fdd97a55654abba5795f2b9d625, type: 2}
-  startAnimation: {fileID: 0}
-  endAnimation: {fileID: 0}
+  introduceCharacter: 0
+  startAnimation: 
+  endAnimation: 
   autoAdvanceOnEnd: 0
+  wipeAllCharacters: 1
   lineNumber: 4
+  pauseIndexes: 
+  pauseTime: []

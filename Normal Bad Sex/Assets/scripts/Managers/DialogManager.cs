@@ -18,6 +18,8 @@ public class DialogManager : MonoBehaviour
 
     private float _timeBetweenCharacters;
     private float _timeSinceLastCharacter;
+    private int _pauseTracker;
+    private float _pauseTimer;
 
     private void Start()
     {
@@ -51,7 +53,9 @@ public class DialogManager : MonoBehaviour
 
     private bool TimeToAdvanceCharacter()
     {
-        if (_timeSinceLastCharacter > _timeBetweenCharacters)
+        if (ShouldPause()) return false;
+        
+        if (_timeSinceLastCharacter > _timeBetweenCharacters )
         {
             _timeSinceLastCharacter = 0;
             return true;
@@ -61,6 +65,27 @@ public class DialogManager : MonoBehaviour
         return false;
     }
 
+    private bool ShouldPause()
+    {
+        if (_pauseTracker == -1 || _pauseTracker == _currentLine.line.pauseIndexes.Length) return false;
+
+        if (_currentLine.line.pauseIndexes[_pauseTracker] == textArea.maxVisibleCharacters)
+        {
+            if (_pauseTimer < _currentLine.line.pauseTime[_pauseTracker])
+            {
+                _pauseTimer += Time.deltaTime;
+                return true;
+            }
+            else
+            {
+                _pauseTracker++;
+                _pauseTimer = 0;
+                return false;
+            }
+        }
+
+        return false;
+    }
 
     private void StartLine(NbsEvent lineStartedEvent)
     {
@@ -71,7 +96,14 @@ public class DialogManager : MonoBehaviour
         textArea.text = _currentLine.line.lineText;
         textArea.maxVisibleCharacters = 0;
         _timeSinceLastCharacter = 0;
-        _timeBetweenCharacters = (_currentLine.line.audioFile.length / _currentLine.line.lineText.Length) * (1 - characterSpeedFactor);
+        float totalPauses = 0;
+        foreach (var pause in _currentLine.line.pauseTime)
+        {
+            totalPauses += pause;
+        }
+
+        _pauseTracker = _currentLine.line.pauseIndexes.Length > 0 ? 0 : -1;
+        _timeBetweenCharacters = ((_currentLine.line.audioFile.length - totalPauses) / _currentLine.line.lineText.Length) * (1 - characterSpeedFactor);
         panel.SetActive(true);
     }
 

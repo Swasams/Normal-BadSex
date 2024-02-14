@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+
 public class InteractableCharacter : MonoBehaviour
 {
     public Character character;

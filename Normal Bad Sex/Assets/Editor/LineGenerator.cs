@@ -5,12 +5,13 @@ using UnityEditor;
 using System.IO;
 
 
+
 public static class LineGenerator
 {
     private static string _tsvFile;
     private static string _lineFolder;
     private static string _audioClipsFolder;
-    private static string _characterFodler;
+    private static string _characterFolder;
     private static string _storyName;
 
     [MenuItem("Tools/Generate Lines")]
@@ -33,8 +34,8 @@ public static class LineGenerator
             "", "Audio Clips");
         if (string.IsNullOrEmpty(_audioClipsFolder)) return;
 
-        _characterFodler = EditorUtility.OpenFolderPanel("Please select the folder where the characters are stored", "","Characters");
-        if (string.IsNullOrEmpty(_characterFodler)) return;
+        _characterFolder = EditorUtility.OpenFolderPanel("Please select the folder where the characters are stored", "","Characters");
+        if (string.IsNullOrEmpty(_characterFolder)) return;
 
         // string animationsFolder = EditorUtility.OpenFolderPanel("Please select the folder where the animations are stored", "","Animations");
         // if (string.IsNullOrEmpty(animationsFolder)) return;
@@ -119,14 +120,25 @@ public static class LineGenerator
         }
 
         // Load text line
-        line.lineText = splitData[0];
+        try
+        {
+            line.ProcessPauses(splitData[0]);
+        }
+        catch (Exception e)
+        {
+            line.lineText = splitData[0];
+        }
+
+        
 
         // Line number
         line.lineNumber = index;
 
+
+
         // Load character
         // Check audio clip
-        string absoluteCharacterPath = $"{ _characterFodler }/{splitData[2]}.asset";
+        string absoluteCharacterPath = $"{ _characterFolder }/{splitData[2]}.asset";
         string relativeCharacterPath = absoluteCharacterPath[absoluteCharacterPath.IndexOf("Assets/", StringComparison.Ordinal)..];
         if (File.Exists(absoluteCharacterPath))
         {

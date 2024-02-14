@@ -20,7 +20,7 @@ public class Line : ScriptableObject
     public int[] pauseIndexes;
     public float[] pauseTime;
     
-    private void ProcessPauses(string literalText)
+    public void ProcessPauses(string literalText)
     {
         List<int> _pauseIndexes = new List<int>();
         List<float> _pauseTime = new List<float>();
