@@ -138,6 +138,18 @@ public class MouseClick : NbsEvent
     }
 }
 
+public class SnapEnd : NbsEvent
+{
+    public readonly Vector3 positionToSnapTo;
+    public readonly String nameOfPosition;
+    
+    public SnapEnd(Vector3 positionToSnapTo, String nameOfPosition)
+    {
+        this.positionToSnapTo = positionToSnapTo;
+        this.nameOfPosition = nameOfPosition;
+    }
+}
+
 public class MinigameStarted : NbsEvent
 {
 }
