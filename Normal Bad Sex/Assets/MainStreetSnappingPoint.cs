@@ -11,6 +11,8 @@ public class MainStreetSnappingPoint : MonoBehaviour
     public GameObject rightSideFacade;
     public GameObject leftSideFacade;
 
+    public GameObject objectToMove;
+
     public void SetFacadesLeft()
     {
         rightSideFacade.SetActive(false);
