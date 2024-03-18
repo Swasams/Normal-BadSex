@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feba5b418d597df4ea09517a7b3df9b8, type: 3}
+  m_Name: 059_FullScript
+  m_EditorClassIdentifier: 
+  audioFile: {fileID: 8300000, guid: 66ba4bf21ce9b354fade5247e6e6ba6d, type: 3}
+  lineText: '"I don''t know why you''re having problems, you got all the equipment."'
+  speaker: {fileID: 11400000, guid: dc89c40b662f0ff4783ca4877b3cbd8d, type: 2}
+  introduceCharacter: 0
+  startAnimation: 
+  endAnimation: 
+  autoAdvanceOnEnd: 0
+  wipeAllCharacters: 1
+  lineNumber: 59

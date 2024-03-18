@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feba5b418d597df4ea09517a7b3df9b8, type: 3}
+  m_Name: 091_FullScript
+  m_EditorClassIdentifier: 
+  audioFile: {fileID: 8300000, guid: 401a228611c146342b7faa1f6ffc7b66, type: 3}
+  lineText: When it comes to the really big O, I need to take the vibrator out. And
+    you've got to be with a gu- a person who gets it.
+  speaker: {fileID: 11400000, guid: d029684820cb03f43a803b7ac974a99d, type: 2}
+  introduceCharacter: 0
+  startAnimation: 
+  endAnimation: 
+  autoAdvanceOnEnd: 0
+  wipeAllCharacters: 1
+  lineNumber: 91

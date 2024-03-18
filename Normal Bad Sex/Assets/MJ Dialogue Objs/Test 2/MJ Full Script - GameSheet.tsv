@@ -1,0 +1,115 @@
+Line	AudioFileName	Character	Start AnimationName	End Animation Name	autoAdvanceOnEnd
+I grew up in a very loving, for the most part, Irish Catholic family.	10_Child1	YoungMJ			TRUE
+I went to a Catholic high school, which I really hated. Sex was never brought up.	10_Child2	YoungMJ			TRUE
+I was completely clueless about everything. But I looked,  I looked cool- in a Catholic school. I'd wear white lipstick, my friends were the naughty girls, you know.	10_Child3	YoungMJ			FALSE
+The nuns hated me and tortured me because I looked "fast". My last year I just thought, fuck this. I gave the nuns shit back. If you're gonna treat me like this, I'm gonna do whatever I want.	10_Nuns1	Nun			TRUE
+Because I was pretty, they didn't expect much of me. I was told by the guidance counselor, Sister Agnes- you're not going to get into college. You're not going to get into art school. You should probably be a secretary and get married to that hunk you're going out with. 	10_Nuns2	Nun			TRUE
+And I walked out of that office at 16 and I thought... Fuck. You. And that's when I changed my life around, meaning I decided I was going to go to art school, I took my studies a little more seriously.	10_Nuns3	Nun			FALSE
+I would say that my first sex was, I think I was about 18 years old. I was actually engaged to this football player.	10_Sex1	Footballer			TRUE
+I was absolutely clueless about sex! He was timid too, he didn't know anything. So, it was a tremendous let down.	10_Sex2	Footballer			TRUE
+I left my fiancé and I started to have sex a lot. I can say in my teenage years, it was more about quantity. Definitely not about quality.	10_Sex3	Footballer			FALSE
+I was very fortunate to grow up in the sixties.  	20_Intro1	20Intro			TRUE
+I wasn't interested in the queer life at that point, but I really enjoyed the free sex life that we all had, especially in New York City.	20_Intro2	20Intro			TRUE
+My life began to expand and my conquest began to expand.	20_Intro3	20Intro			FALSE
+It was art school. That's what changed me. That's where I found my tribe.  	20_Art1	20Art			TRUE
+Buh bye, Catholicness. 	20_Art2	20Art			TRUE
+The shift to School of Visual Arts was, well, much more sophisticated, much more pushing me. 	20_Art3	20Art			TRUE
+I began to think that I could have a career.	20_Art4	20Art			FALSE
+Though I did work hard in school, I was out all of the time.	20_Club1	20ClubScene			TRUE
+That was early 70s and it was a dangerous city now. But there was an excitement to it.	20_Club2	20ClubScene			TRUE
+There were clubs. That was magic. And at that time, it was Studio 54, I knew enough to go out with one of the guys who let you in.	20_Club3	20ClubScene			TRUE
+I became a club girl. We would go into clubs and walk out with nine million cards.	20_Club4	20ClubScene			FALSE
+So in my twenties, I was enjoying getting even. 	20_Sex1	20Sex			TRUE
+Getting even for my background, getting even to the nuns, getting even to my parents.	20_Sex2	20Sex			TRUE
+Some sex was great, and some wasn't. It was more like spite sex.	20_Sex3	20Sex			FALSE
+I also began this thing called masturbating.	20_Masturb1	20Masturb			TRUE
+ And then I became, not so much demanding, but knowing what sex could be.	20_Masturb2	20Masturb			FALSE
+Sex started equaling power. Now, is that healthy? ...It just was. 	20_Power1	20Power			TRUE
+I really didn't even think about what gave me pleasure.	20_Power2	20Power			TRUE
+I think it was not a good thing that my power was based on how I looked and how I performed sexually.	20_Power3	20Power			FALSE
+In the eighties, New York was cooler then... to be hanging around Fanelli's and really get an education of New York art life.	30_Intro1	30Intro			TRUE
+I had been living on the Upper East Side, which was shameful at that time to have to admit to people. 	30_Intro2	30Intro			TRUE
+And then I stayed in a fabulous apartment on St. Mark's Place. I remember looking out my window and there were sax players and, you know, people's clothes on the line.	30_Intro3	30Intro			FALSE
+At thirty, I got tired of constantly being out all the time. It went from dating and fucking and clubbing to work.	30_Growing1	30Growing			TRUE
+I got a job being an art director for a sports magazine. I was more interested in relationships, in the art scene, just a more interesting person.	30_Growing2	30Growing			TRUE
+I started going to the theater more, my women friends were a bigger part of my life .	30_Growing3	30Growing			FALSE
+My sex was different. It was more about really digging somebody. 	30_Sex1	30Sex			TRUE
+My first boyfriend we were together like four years. We had good sexual communication. 	30_Sex2	30Sex			TRUE
+It wasn't about, a performance, I respected him you know, I, I, I loved him. And I learned a lot from him.	30_Sex3	30Sex			TRUE
+So, again, my thirties became, better sex for the most part. Pretty good sex.	30_Sex4	30Sex			FALSE
+Forties, my career really took off. 	40_Intro1	40Intro			TRUE
+I got a very prestigious job. It taught me the ropes of forming the contents of magazines and newspapers. 	40_Intro2	40Intro			TRUE
+We traveled worldwide. It was a wonderful time for me.	40_Intro3	40Intro			FALSE
+ In my early forties, I got married. And I got married to this guy because he needed a green card. 	40_Marriage1	40Marriage			TRUE
+He was cool and interesting. We had good sex in the beginning.	40_Marriage2	40Marriage			TRUE
+What was happening with my husband at the time, was that he couldn't get his act together as a filmmaker,	40_Marriage3	40Marriage			TRUE
+and so, uh, his dick didn't exactly go down, but my career went up, and our sexual relationship went down.	40_Marriage4	40Marriage			FALSE
+ I was intimidating to him, and he became boring to me. 	40_Marriage5	40Marriage			TRUE
+I wanted the thing to work, but I was only willing to give it like, four years, and two of which were pretty bad. So I left.	40_Marriage6	40Marriage			TRUE
+I got a divorce.  it still was a little sad.  It didn't affect how I felt about myself, because I felt powerful in the world	40_Marriage7	40Marriage			FALSE
+I'm very good at being alone. I didn't have sex, I think, for about three years, maybe.	40_Alone1	40Alone			TRUE
+Wait a minute, I'm going to think about that.... The husband took up three years... and then I took off for about three years. 	40_Alone2	40Alone			TRUE
+I was just like, who gives a shit? I've had it. I guess I worked more on my career, or  getting more women back in my life. 	40_Alone3	40Alone			FALSE
+But when I came back,  I came back with real zhuzh.	40_Back1	40Back			TRUE
+And I came back very much in control because thirties, I had a lot of sex. But I don't know that I drove it.	40_Back2	40Back			TRUE
+In my forties, I  began to really know what I wanted more.  I was far, far, far more particular. 	40_Back3	40Back			TRUE
+That's what's so great about taking off time. You know, it's like, hey, I'm fine, I don't need sex. 	40_Back4	40Back			FALSE
+At 50, I was in a very good place, actually.  But it was in the mid 50s when I started to deal with vaginal dryness, 	50_Gyno1	50Gyno			TRUE
+and it's awful when it happens. I was not having much sex because it hurt.	50_Gyno2	50Gyno			TRUE
+I went to my gynecologist- a male- and I said, you know, help me. And this shithead said to me, 	50_Gyno3	50Gyno			TRUE
+"I don't know why you're having problems, you got all the equipment."	50_Gyno4	50Gyno			TRUE
+ I walked out and never came back.	50_Gyno5	50Gyno			TRUE
+And then I went to this other wonderful female gynecologist and she started putting me, after a great deal of tests, on HRT.	50_Gyno6	50Gyno			TRUE
+Menopause is a bitch, let me tell you girls. And you can prepare before but that's another whole conversation.	50_Gyno7	50Gyno			FALSE
+ I took some time off from sex.  	50_Queer1	50Queer			TRUE
+When I came back, there was such a curiosity about all of the things that had been not necessarily pent up. But that I didn't explore	50_Queer2	50Queer			TRUE
+I started having an affair with my gorgeous trainer, a woman,  and we had a very good time.	50_Queer3	50Queer			TRUE
+That's the difference to me with exploring your queerness, is that you're friends. 	50_Queer4	50Queer			TRUE
+You understand each other and then eventually end up in the sack.	50_Queer5	50Queer			TRUE
+We were together for about four years. 	50_Queer6	50Queer			TRUE
+We really had a good time, but I do think I was a selfish lover with her. And that's kind of how that ended?	50_Queer7	50Queer			TRUE
+I do enjoy so much the, not only the, the sexual flow of a women, the emphasis on your whole body was important to me.	50_Queer8	50Queer			TRUE
+I was brought up in a house of women, so there's easiness and that. I love it. It becomes with men, much more about the dick, and that's what I find boring.	50_Queer9	50Queer			FALSE
+Dating online was a ball. I discovered how how we women in our 50s are. The younger guys came after me.	50_Dating1	50Dating			TRUE
+I had an ongoing relationship with this comedian. Gorgeous, incredible sex between us.	50_Dating2	50Dating			TRUE
+I remember wanting to wish him a happy holidays, And just thinking was this too much? Did this sound too needy?	50_Dating3	50Dating			TRUE
+I thought, enough. It is time for me to be human! And need a little love and affection in my life, besides sex. 	50_Dating4	50Dating			FALSE
+ I saw my body change a bit and I was kind to myself about it, 	60_Aging1	60Aging			TRUE
+working out in a softer way, not pushing myself so hard. And I liked the shift in myself, really accepting where I was in life,	60_Aging2	60Aging			TRUE
+I considered maybe having a relationship with someone my own age.	60_Aging3	60Aging			FALSE
+I'm coming off the fifties where I was always with younger men, and it's not just the stamina, but the looks of them. I am a visual person, you know, sorry, this is a fact.	60_OldBF1	60OldBF			TRUE
+I think I found him on Tinder.   I remember the first time he was going down on me. Looking down on it and seeing this mass of wrinkles. 	60_OldBF2	60OldBF			TRUE
+And just like, whoa, I don't know that I can do this. But I did. And we were together for about, my usual, about three years. 	60_OldBF3	60OldBF			TRUE
+He actually was a very experimental guy. We had great sex. Because he had been with a lot of men, so there were a lot of tools being used. He was really fantastic in the sack.	60_OldBF4	60OldBF			TRUE
+I got lucky with that one.	60_OldBF5	60OldBF			FALSE
+Sixties was a huge time for me in my career.  I completely reinvented myself. 	60_Work1	60Work			TRUE
+The corporate world was awful. I hated it so I gave it the big fuck you. I no longer wanted to be a designer. 	60_Work2	60Work			TRUE
+I started this thing called Glorious Broads. And, I just developed so much more, truly, clit, I'm not gonna call it balls. It was a, it was a great time for me, and still is.	60_Work3	60Work			FALSE
+I think this, the sex in my 60s was much more, I hate this word, but authentic. 	60_Sex1	60Sex			TRUE
+Though I was comfortable with masturbation, I got much more comfortable with knowing what my body needed more. 	60_Sex2	60Sex			TRUE
+It was something that I couldn't go near for the first, you know, 18 years of my life. And then the more you explore it, the more it's like a little source of power that is a deep, deep part of me.	60_Sex3	60Sex			TRUE
+I don't expect a lover to be as fabulous as my vibrator. 	60_Sex4	60Sex			TRUE
+When it comes to the really big O, I need to take the vibrator out. And you've got to be with a gu- a person who gets it.	60_Sex5	60Sex			FALSE
+I'm  Mary Jane Fahey, I'm presently the founder of Glorious Broads.	70_Who1	70WhoAreYou			TRUE
+I'm 73. This is like my fifth reinvention, because you don't keep reinventing, you're fucked.	70_Who2	70WhoAreYou			FALSE
+ I always wanted to be separate. I want my freedom. I had never wanted to live with anyone.	70_TheOne1	70TheOne			TRUE
+I was only a wife for about four years of my entire life. 	70_TheOne2	70TheOne			TRUE
+I don't want to be, addressed as a wife, live as a wife, I don't want to be half to be whole. And that to me is the way I have lived.	70_TheOne3	70TheOne			TRUE
+ But having a boyfriend was just kind of part of my mix... and a good job. 	70_TheOne4	70TheOne			FALSE
+I have a good relationship now, with  a beautiful person, really loving, interesting person.	70_Current1	70Current			TRUE
+He's been around the block, he's a musician.	70_Current2	70Current			TRUE
+I trust this person. And from my background, that's a biggie. 	70_Current3	70Current			TRUE
+But he doesn't lives with me. Will never live with me. I run my own ship.	70_Current4	70Current			TRUE
+We have a good sex life, but at the moment, he's going through issues, wink, wink, and I'm trying to be patient about it.	70_Current5	70Current			TRUE
+The partnership  is loving and I like that  but no wifey. 	70_Current6	70Current			FALSE
+I'm very interested in what's going on. The freedom of gender, the exploration of gender. I love it.	70_Culture1	70Culture			TRUE
+Now I see younger friends who didn't reap the harvest like I did.	70_Culture2	70Culture			TRUE
+First of all, there is safety to be concerned. We never gave a shit.	70_Culture3	70Culture			TRUE
+I have to say the sexual culture when I was growing up was so open, was so anything goes.  	70_Culture4	70Culture			FALSE
+For me, or...? I'm gonna talk for me- because I was gonna say communication, but you know what? 	70_BestSex1	70BestSex			TRUE
+For me, my best sex has been... with a stranger... has been unexpected.	70_BestSex2	70BestSex			TRUE
+I'm smiling because I don't know if any of this is healthy and I have gone to plenty of shrinks about it and then I just thought, fuck it, this is who I am.	70_BestSex3	70BestSex			TRUE
+Is that healthy? Who gives a shit? That's what turns me on.	70_BestSex4	70BestSex			FALSE
+I would definitely say to myself, be more particular. Don't say yes to everybody.	70_Advice	70Advice	 		FALSE
+That it can be so good.  You may move a little slower. My back's killing me right now, but it it can be almost as fulfilling as your twenties- well, for me, more fulfilling as your twenty year old.	70_Surprises	70Surprises			FALSE
+That great sex had to be totally based on how fit I was. I was very into that bullshit.  	70_Unlearn	70Unlearn			FALSE

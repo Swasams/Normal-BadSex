@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feba5b418d597df4ea09517a7b3df9b8, type: 3}
+  m_Name: 112_FullScript
+  m_EditorClassIdentifier: 
+  audioFile: {fileID: 8300000, guid: ae00219c50285d34883e95f800f03d65, type: 3}
+  lineText: I would definitely say to myself, be more particular. Don't say yes to
+    everybody.
+  speaker: {fileID: 11400000, guid: 4c174ad9892ce9f418e97d6ef2374ed3, type: 2}
+  introduceCharacter: 0
+  startAnimation: 
+  endAnimation: 
+  autoAdvanceOnEnd: 0
+  wipeAllCharacters: 1
+  lineNumber: 112
