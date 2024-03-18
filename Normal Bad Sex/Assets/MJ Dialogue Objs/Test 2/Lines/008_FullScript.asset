@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feba5b418d597df4ea09517a7b3df9b8, type: 3}
+  m_Name: 008_FullScript
+  m_EditorClassIdentifier: 
+  audioFile: {fileID: 8300000, guid: 1bcc2ee32469c7a46b5cef1aafa97338, type: 3}
+  lineText: I was absolutely clueless about sex! He was timid too, he didn't know
+    anything. So, it was a tremendous let down.
+  speaker: {fileID: 11400000, guid: b5d04bf079db41b4aa46820af1d57b6b, type: 2}
+  introduceCharacter: 0
+  startAnimation: 
+  endAnimation: 
+  autoAdvanceOnEnd: 0
+  wipeAllCharacters: 1
+  lineNumber: 8

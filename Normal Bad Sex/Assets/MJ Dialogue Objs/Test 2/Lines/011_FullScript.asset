@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feba5b418d597df4ea09517a7b3df9b8, type: 3}
+  m_Name: 011_FullScript
+  m_EditorClassIdentifier: 
+  audioFile: {fileID: 8300000, guid: fbe17f7dcd488cf4c946bf08e7ebe916, type: 3}
+  lineText: I wasn't interested in the queer life at that point, but I really enjoyed
+    the free sex life that we all had, especially in New York City.
+  speaker: {fileID: 11400000, guid: 4da300024ab771344803b20500a169b2, type: 2}
+  introduceCharacter: 0
+  startAnimation: 
+  endAnimation: 
+  autoAdvanceOnEnd: 0
+  wipeAllCharacters: 1
+  lineNumber: 11

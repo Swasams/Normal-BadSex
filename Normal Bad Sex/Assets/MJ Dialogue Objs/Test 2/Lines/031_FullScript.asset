@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feba5b418d597df4ea09517a7b3df9b8, type: 3}
+  m_Name: 031_FullScript
+  m_EditorClassIdentifier: 
+  audioFile: {fileID: 8300000, guid: deb547150d99e8641adc91f95689b4f0, type: 3}
+  lineText: And then I stayed in a fabulous apartment on St. Mark's Place. I remember
+    looking out my window and there were sax players and, you know, people's clothes
+    on the line.
+  speaker: {fileID: 11400000, guid: a22dd68988a15724899da1a566e9fe79, type: 2}
+  introduceCharacter: 0
+  startAnimation: 
+  endAnimation: 
+  autoAdvanceOnEnd: 0
+  wipeAllCharacters: 1
+  lineNumber: 31

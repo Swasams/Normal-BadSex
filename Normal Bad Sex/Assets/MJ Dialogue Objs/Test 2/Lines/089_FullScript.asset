@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feba5b418d597df4ea09517a7b3df9b8, type: 3}
+  m_Name: 089_FullScript
+  m_EditorClassIdentifier: 
+  audioFile: {fileID: 8300000, guid: 9c36b826f54922e4db6bb8681982a9b4, type: 3}
+  lineText: It was something that I couldn't go near for the first, you know, 18
+    years of my life. And then the more you explore it, the more it's like a little
+    source of power that is a deep, deep part of me.
+  speaker: {fileID: 11400000, guid: d029684820cb03f43a803b7ac974a99d, type: 2}
+  introduceCharacter: 0
+  startAnimation: 
+  endAnimation: 
+  autoAdvanceOnEnd: 0
+  wipeAllCharacters: 1
+  lineNumber: 89
