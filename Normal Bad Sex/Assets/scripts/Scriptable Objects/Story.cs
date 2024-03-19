@@ -8,9 +8,9 @@ public class Story : ScriptableObject
 {
     [SerializeField]
     public List<Line> lines;
-    
-    
-    public Dictionary<String,List<Line>> linesByCharacters;
+
+
+    public Dictionary<string, List<Line>> linesByCharacters;
 
 
     private int _currentLine;
@@ -34,31 +34,34 @@ public class Story : ScriptableObject
         return _currentLine;
     }
 
-    public void SetLines(List<Line> allLines )
+    public void SetLines(List<Line> allLines)
     {
         this.lines = allLines;
     }
 
     public void CreateDictionary()
     {
+        Debug.Log("Creating Dictionary");
         linesByCharacters = new Dictionary<string, List<Line>>();
+        Debug.Log("Initialized linesByCharacters " + linesByCharacters.Count);
         foreach (var line in lines)
         {
-            if (linesByCharacters.TryGetValue(line.speaker.name,out var linesOfCharacter ))
+            if (line.speaker == null) continue;
+            if (linesByCharacters.TryGetValue(line.speaker.name, out var linesOfCharacter))
             {
                 linesOfCharacter.Add(line);
-                linesOfCharacter.Sort( (line1,line2) => (line1.lineNumber - line2.lineNumber) );
+                linesOfCharacter.Sort((line1, line2) => (line1.lineNumber - line2.lineNumber));
             }
             else
             {
-                linesOfCharacter = new List<Line> {line};
-                linesByCharacters.Add(line.speaker.name,linesOfCharacter);
+                linesOfCharacter = new List<Line> { line };
+                linesByCharacters.Add(line.speaker.name, linesOfCharacter);
             }
         }
     }
 
     // Old minigame code for serialized stories
-    
+
     // public (Line, Minigame) GetNext()
     // {
     //     int nextLine = _currentLine + 1;
@@ -76,8 +79,8 @@ public class Story : ScriptableObject
     //     _currentLine = nextLine;
     //     return (lineToReturn, minigameToReturn);
     // }
-    
-    
+
+
     // public void SetCurrentLine(int lineNumber)
     // {
     //     _currentLine = lineNumber;
