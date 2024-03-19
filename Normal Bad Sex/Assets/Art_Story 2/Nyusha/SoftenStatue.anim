@@ -35,15 +35,15 @@ AnimationClip:
       value: {fileID: 21300000, guid: 1d667239d0d36a04f89436b508f14eaa, type: 3}
     - time: 0.75
       value: {fileID: 21300000, guid: 312178c1c40805f41a485cb68c216f8e, type: 3}
-    - time: 0.8333333
+    - time: 0.7916667
       value: {fileID: 21300000, guid: e418a9f938be8d04fbe8e3e4355cc981, type: 3}
-    - time: 0.9166667
+    - time: 0.875
       value: {fileID: 21300000, guid: 01f27976002b73e41b0fdd1b63cd6835, type: 3}
-    - time: 1.2083334
+    - time: 1.125
       value: {fileID: 21300000, guid: 10f6f18e1eeb3ab4ca394022c386a9c5, type: 3}
-    - time: 1.375
+    - time: 1.25
       value: {fileID: 21300000, guid: 21b6e10b83c48634e94e928b20e78e29, type: 3}
-    - time: 1.5416666
+    - time: 1.375
       value: {fileID: 21300000, guid: 0486831d735eb204797b5d0a5212153a, type: 3}
     - time: 3.1666667
       value: {fileID: 21300000, guid: 0486831d735eb204797b5d0a5212153a, type: 3}
