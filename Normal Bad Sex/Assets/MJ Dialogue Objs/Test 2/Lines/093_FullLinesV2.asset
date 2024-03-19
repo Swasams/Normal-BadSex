@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feba5b418d597df4ea09517a7b3df9b8, type: 3}
+  m_Name: 093_FullLinesV2
+  m_EditorClassIdentifier: 
+  audioFile: {fileID: 8300000, guid: b7e4583305d4cf447896f8c9f9654579, type: 3}
+  lineText: I'm 73. This is like my fifth reinvention, because you don't keep reinventing,
+    you're fucked.
+  speaker: {fileID: 11400000, guid: ff59293e9dcb717408d55aecdfc6ec3b, type: 2}
+  introduceCharacter: 0
+  startAnimation: 
+  endAnimation: 
+  autoAdvanceOnEnd: 0
+  wipeAllCharacters: 1
+  lineNumber: 93
+  pauseIndexes: 
+  pauseTime: []

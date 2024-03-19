@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feba5b418d597df4ea09517a7b3df9b8, type: 3}
+  m_Name: 039_FullLinesV2
+  m_EditorClassIdentifier: 
+  audioFile: {fileID: 8300000, guid: e9b7b3c87175d8643af47912ea78aa54, type: 3}
+  lineText: 'Forties, my career really took off. '
+  speaker: {fileID: 11400000, guid: cbff0dd90a55d6c4ca3d47cd2a34006c, type: 2}
+  introduceCharacter: 0
+  startAnimation: 
+  endAnimation: 
+  autoAdvanceOnEnd: 0
+  wipeAllCharacters: 1
+  lineNumber: 39
+  pauseIndexes: 
+  pauseTime: []
