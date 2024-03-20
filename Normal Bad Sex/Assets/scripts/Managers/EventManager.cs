@@ -8,7 +8,7 @@ public class EventManager : MonoBehaviour
 {
     // Global
     public static EventManager Instance;
-    
+
     // Properties
     public bool logEventFires = true;
 
@@ -94,7 +94,7 @@ public class LineStart : NbsEvent
 {
 
     public readonly Line line;
-    
+
     public LineStart(Line line)
     {
         this.line = line;
@@ -104,7 +104,7 @@ public class LineStart : NbsEvent
 public class LineEnd : NbsEvent
 {
     public readonly Line line;
-    
+
     public LineEnd(Line line)
     {
         this.line = line;
@@ -121,17 +121,19 @@ public class LineSkipped : NbsEvent
 public class TriggerLines : NbsEvent
 {
     public readonly Line[] lines;
-    
-    public TriggerLines(Line[] lines)
+    public readonly Animator characterAnimator;
+
+    public TriggerLines(Line[] lines, Animator characterAnimator)
     {
         this.lines = lines;
+        this.characterAnimator = characterAnimator;
     }
 }
 
 public class MouseClick : NbsEvent
 {
     public readonly Vector3 clickPosition;
-    
+
     public MouseClick(Vector3 clickPosition)
     {
         this.clickPosition = clickPosition;
@@ -142,7 +144,7 @@ public class SnapEnd : NbsEvent
 {
     public readonly Vector3 positionToSnapTo;
     public readonly String nameOfPosition;
-    
+
     public SnapEnd(Vector3 positionToSnapTo, String nameOfPosition)
     {
         this.positionToSnapTo = positionToSnapTo;

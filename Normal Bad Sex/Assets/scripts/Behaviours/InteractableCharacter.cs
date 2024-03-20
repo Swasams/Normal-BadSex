@@ -8,36 +8,53 @@ public class InteractableCharacter : MonoBehaviour
     public Line[] lines;
     public GameObject isActiveObject;
     private Boolean _isActive = false;
-    
+
+    private Animator _myAnimator;
 
 
     private void Start()
     {
-        if (!GameManager.Instance.currentStory.linesByCharacters.TryGetValue(character.name , out var linesOfCharacter)) {
-           Debug.LogWarning($"Unable to find lines for character {character.name} in the story object {GameManager.Instance.currentStory.name} attached to the Game Manager");
-        }else {
+        _myAnimator = transform.GetComponent<Animator>();
+
+        if (!GameManager.Instance.currentStory.linesByCharacters.TryGetValue(character.name, out var linesOfCharacter))
+        {
+            Debug.LogWarning($"Unable to find lines for character {character.name} in the story object {GameManager.Instance.currentStory.name} attached to the Game Manager");
+        }
+        else
+        {
             lines = linesOfCharacter.ToArray();
         }
-        isActiveObject.SetActive(false);
+
+        if (isActiveObject == null)
+        {
+            Debug.LogWarning($"Unable to find a  isActiveObject for {character.name} you won't be able to see any icons when iteracting with this character");
+        }
+        else
+        {
+            isActiveObject.SetActive(false);
+        }
+
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && _isActive)
         {
-            EventManager.Instance.Fire(new TriggerLines(lines));
+            EventManager.Instance.Fire(new TriggerLines(lines, _myAnimator));
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.tag.Equals("Player")) return;
-        
+
         if (_isActive) return;
 
         _isActive = true;
-        isActiveObject.SetActive(true);
-        
+
+        if (isActiveObject != null)
+            isActiveObject.SetActive(true);
+
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -45,6 +62,8 @@ public class InteractableCharacter : MonoBehaviour
         if (!other.tag.Equals("Player")) return;
         if (!_isActive) return;
         _isActive = false;
-        isActiveObject.SetActive(false);
+
+        if (isActiveObject != null)
+            isActiveObject.SetActive(false);
     }
 }
