@@ -15,7 +15,7 @@ MonoBehaviour:
   audioFile: {fileID: 8300000, guid: 4832ee67079cc244aae52c7c162c2e5c, type: 3}
   lineText: I went to a Catholic high school, which I really hated. Sex was never
     brought up.
-  speaker: {fileID: 0}
+  speaker: {fileID: 11400000, guid: 5c38ed0c431e83d4698d1a53cf52e4d8, type: 2}
   introduceCharacter: 0
   startAnimation: 
   endAnimation: 
