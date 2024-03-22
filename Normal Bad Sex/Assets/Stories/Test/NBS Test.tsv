@@ -1,4 +1,4 @@
-Line	AudioFileName	Character	Start AnimationName	End Animation Name	autoAdvanceOnEnd
+Line	AudioFileName	Character	StartAnimationName	EndAnimationName	autoAdvanceOnEnd
 em {1} sooo	1	Clown	testStartAnim	endAnim	FALSE
 I don't {3}care	2	Lion	testStartAnim2	endAnim2	TRUE
 testing{1} this{2} line	3	Clown			

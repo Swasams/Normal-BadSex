@@ -17,7 +17,7 @@ public static class LineGenerator
     [MenuItem("Tools/Generate Lines")]
     public static void GenerateLines()
     {
-        _storyName = EditorInputDialog.Show( "Name of the Story", "", "" );
+        _storyName = EditorInputDialog.Show("Name of the Story", "", "");
         if (string.IsNullOrEmpty(_storyName))
         {
             Debug.LogWarning("Name cannot be empty");
@@ -34,15 +34,15 @@ public static class LineGenerator
             "", "Audio Clips");
         if (string.IsNullOrEmpty(_audioClipsFolder)) return;
 
-        _characterFolder = EditorUtility.OpenFolderPanel("Please select the folder where the characters are stored", "","Characters");
+        _characterFolder = EditorUtility.OpenFolderPanel("Please select the folder where the characters are stored", "", "Characters");
         if (string.IsNullOrEmpty(_characterFolder)) return;
 
         // string animationsFolder = EditorUtility.OpenFolderPanel("Please select the folder where the animations are stored", "","Animations");
         // if (string.IsNullOrEmpty(animationsFolder)) return;
-        
+
         string[] allEntries = File.ReadAllLines(_tsvFile);
         int index = 0;
-        
+
         List<Line> allLines = new List<Line>();
 
         foreach (var entry in allEntries)
@@ -65,11 +65,11 @@ public static class LineGenerator
                 Debug.LogWarning($"Found an entry that doesn't match required amount of fields. Entry: {entry}");
             }
             index++;
-            
+
         }
-        
+
         // Check for existing story
-        string storyPath =  Path.GetDirectoryName(_tsvFile).Replace("\\","/") + $"/{_storyName}.asset";
+        string storyPath = Path.GetDirectoryName(_tsvFile).Replace("\\", "/") + $"/{_storyName}.asset";
         string relativeStoryPath = storyPath[storyPath.IndexOf("Assets/", StringComparison.Ordinal)..];
         Story story;
         if (File.Exists(storyPath))
@@ -80,9 +80,9 @@ public static class LineGenerator
         {
             story = ScriptableObject.CreateInstance<Story>();
         }
-        
+
         story.SetLines(allLines);
-        
+
         AssetDatabase.SaveAssets();
     }
 
@@ -90,7 +90,7 @@ public static class LineGenerator
     {
         string linePath = _lineFolder + $"/{index:000}_{_storyName}.asset";
         string relativeLinePath = linePath[linePath.IndexOf("Assets/", StringComparison.Ordinal)..];
-        
+
         Line line;
         bool createAsset = false;
 
@@ -106,12 +106,12 @@ public static class LineGenerator
         }
 
         // Check audio clip
-        string absoluteSoundClipPath = $"{ _audioClipsFolder }/{splitData[1]}.wav";
+        string absoluteSoundClipPath = $"{_audioClipsFolder}/{splitData[1]}.wav";
         string relativeSoundClipPath = absoluteSoundClipPath[absoluteSoundClipPath.IndexOf("Assets/", StringComparison.Ordinal)..];
         if (File.Exists(absoluteSoundClipPath))
         {
             line.audioFile =
-                (AudioClip) AssetDatabase.LoadAssetAtPath(relativeSoundClipPath, typeof(AudioClip));
+                (AudioClip)AssetDatabase.LoadAssetAtPath(relativeSoundClipPath, typeof(AudioClip));
         }
         else
         {
@@ -129,7 +129,7 @@ public static class LineGenerator
             line.lineText = splitData[0];
         }
 
-        
+
 
         // Line number
         line.lineNumber = index;
@@ -138,12 +138,12 @@ public static class LineGenerator
 
         // Load character
         // Check audio clip
-        string absoluteCharacterPath = $"{ _characterFolder }/{splitData[2]}.asset";
+        string absoluteCharacterPath = $"{_characterFolder}/{splitData[2]}.asset";
         string relativeCharacterPath = absoluteCharacterPath[absoluteCharacterPath.IndexOf("Assets/", StringComparison.Ordinal)..];
         if (File.Exists(absoluteCharacterPath))
         {
             line.speaker =
-                (Character) AssetDatabase.LoadAssetAtPath(relativeCharacterPath, typeof(Character));
+                (Character)AssetDatabase.LoadAssetAtPath(relativeCharacterPath, typeof(Character));
         }
         else
         {
@@ -152,8 +152,9 @@ public static class LineGenerator
         }
 
         // Load animations
+        line.startAnimation = splitData[3];
+
         line.endAnimation = null;
-        line.startAnimation = null;
 
         // Advance on end
         line.autoAdvanceOnEnd = false;
