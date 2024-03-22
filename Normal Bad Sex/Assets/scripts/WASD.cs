@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
-public class WASD: MonoBehaviour
+public class WASD : MonoBehaviour
 {
     private Rigidbody2D rb;
     private float moveH, moveV;
     [SerializeField] private float moveSpeed = 1.0f;
     public static WASD instance;
-  
+
 
     void Start()
     {
@@ -29,7 +30,15 @@ public class WASD: MonoBehaviour
 
 
 
-       
+
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "streettrigger")
+        {
+            UnityEngine.Debug.Log("street trigger collided");
+        }
+
+    }
 }

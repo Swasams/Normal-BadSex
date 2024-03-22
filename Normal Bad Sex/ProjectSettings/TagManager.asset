@@ -23,6 +23,7 @@ TagManager:
   - Door
   - Windowsill
   - Curtain
+  - streettrigger
   layers:
   - Default
   - TransparentFX
