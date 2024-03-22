@@ -6,25 +6,25 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/TitleCard.unity
+    path: Assets/bar figets/Scenes/TitleCard.unity
     guid: 6b32a68e6a45a7347a477d049ddec980
   - enabled: 0
-    path: Assets/Scenes/Cenza.unity
+    path: Assets/bar figets/Scenes/Cenza.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 0
-    path: Assets/Scenes/Cenza Original.unity
+    path: Assets/bar figets/Scenes/Cenza Original.unity
     guid: a48af663ece6acd4b803479e53745df4
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
+    path: Assets/bar figets/Scenes/Menu.unity
     guid: e6c8091b28094fe449b50d390df714d3
   - enabled: 0
-    path: Assets/Scenes/Cenza Original 1.unity
+    path: Assets/bar figets/Scenes/Cenza Original 1.unity
     guid: 38af87570d2d36a43b0568756fe6914c
   - enabled: 1
-    path: Assets/Scenes/Cenza 5 Min.unity
+    path: Assets/bar figets/Scenes/Cenza 5 Min.unity
     guid: 3c716e4c677a6ec4998130fa22bbec00
   - enabled: 1
-    path: Assets/Scenes/MaryJane.unity
+    path: Assets/bar figets/Scenes/MaryJane.unity
     guid: 291a972f55aed3c4ab581a14565effe1
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 690d4b755a200104098406c9fffc6f96, type: 2}
